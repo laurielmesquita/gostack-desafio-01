@@ -5,6 +5,9 @@
   "repository": "https://github.com/laurielmesquita/gostack-desafio-01.git",
   "author": "Lauriel Mesquita <laurielmesquita@me.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
   "devDependencies": {
     "eslint": "^6.0.1",
     "eslint-config-standard": "^12.0.0",
