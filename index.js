@@ -3,6 +3,7 @@ const server = express()
 
 server.use(express.json())
 
+let numberOfRequests = 0
 const projects = []
 
 function checkProjectExists (req, res, next) {
@@ -15,6 +16,16 @@ function checkProjectExists (req, res, next) {
 
   return next()
 }
+
+function logRequests (req, res, next) {
+  numberOfRequests++
+
+  console.log(`Número de requisições: ${numberOfRequests}`)
+
+  return next()
+}
+
+server.use(logRequests)
 
 server.post('/projects', (req, res) => {
   const { id, title } = req.body
